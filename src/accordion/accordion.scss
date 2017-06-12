@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.accordion-unit {
+    width: 200px;
+    background-color: #edf1f2;
+    .accordion-head {
+        line-height: 40px;
+        font-size: 14px;
+        color: #58666e;
+        cursor: pointer;
+        &:hover {
+            background-color: #eee;
+        }
+        .icon {
+            display: inline-block;
+            width: 40px;
+        }
+    }
+    .accordion-body {
+        display: none;
+        &.active {
+            display: block;
+        }
+        li {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 60px;
+            cursor: pointer;
+            background-color: #f6f6f8;
+            transition: background-color 0.2s ease-in-out 0s;
+            &:hover {
+                background-color: #eee;
+            }
+            a {
+                color: #363f44;
+                text-decoration: none;
+            }
+        }
+    }
+}

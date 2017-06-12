@@ -1,0 +1,16 @@
+.modal-test {
+    .btn {
+        display: inline-block;
+        height: 30px;
+        padding: 0 20px;
+        line-height: 30px;
+        border: 1px solid #eee;
+        background: #f9f9f9;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        &:hover {
+            background: #eee;
+        }
+    }
+}

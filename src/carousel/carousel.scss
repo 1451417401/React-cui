@@ -1,0 +1,41 @@
+ * {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ li {
+     list-style: none;
+ }
+ 
+ #c-view {
+     position: relative;
+     width: 480px;
+     height: 270px;
+     overflow: hidden;
+     margin: 50px auto;
+ }
+ 
+ #c-content {
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: 3000px;
+     overflow: hidden;
+     zoom: 1;
+ }
+ 
+ #c-content.ani {
+     transition: left 2s;
+ }
+ 
+ #c-content li {
+     width: 480px;
+     height: 270px;
+     float: left;
+ }
+ 
+ #c-content li img {
+     display: block;
+     width: 100%;
+     height: 100%;
+ }
