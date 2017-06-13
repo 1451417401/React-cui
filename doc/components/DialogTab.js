@@ -25,6 +25,7 @@ class DialogTab extends React.Component {
             marginLeft: '40px'
         }
         return <div className="dialog-test">
+                <a className="view-src" href="https://github.com/1451417401/React-cui/tree/master/src/dialog">view src---dialog</a>
                 <ul className="list">
                     {
                         this.state.lists.map((value,index)=>{

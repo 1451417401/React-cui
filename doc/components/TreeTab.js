@@ -97,7 +97,11 @@ class TreeTab extends React.Component {
     }
     render() {
 
-        return <Tree data={data} ></Tree>
+        return <div>
+                    <a className="view-src" href="https://github.com/1451417401/React-cui/tree/master/src/tree">view src---tree</a>
+                    <Tree data={data} ></Tree>
+                </div>
+
     }
 }
 

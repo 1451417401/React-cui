@@ -32,8 +32,8 @@ class Datepicker extends React.Component {
         // }
         //console.dir(dataToShow);
         return <div className="d-container">
-                    <input type="text" className="p-input" onChange={this.handleChagne.bind(this)} onFocus={this.show.bind(this)} value={this.state.dateString} />
-                    <div className={classNames({'p-content':true,'hide':!this.state.showFlag})}>
+                    <input type="text" className="p-input" onChange={this.handleChagne.bind(this)} onFocus={this.show.bind(this)} onBlur={this.hide.bind(this)} value={this.state.dateString} />
+                    <div className={classNames({'p-content':true,'hide':!this.state.showFlag})} onClick={this.filterClick.bind(this)}>
                         <div>
                             <span className="year-op" onClick={this.yearLeft.bind(this)}>&lt;&lt;</span>
                             <span className="month-op" onClick={this.monthLeft.bind(this)}>&lt;</span>
@@ -120,10 +120,20 @@ class Datepicker extends React.Component {
         this.init(this.state.year, this.state.month, this.state.date);
     }
     hide(event) {
-        console.dir(event.target);
-        this.setState({
-            showFlag: false
-        })
+        var _this = this;
+        _this.timer = setTimeout(function() {
+            _this.setState({
+                showFlag: false
+            })
+        }, 100)
+
+    }
+    filterClick(event) {
+        // console.dir('filter');
+        // console.dir(event.target);
+        if (event.target.className != "item-day") {
+            clearTimeout(this.timer);
+        }
     }
     yearLeft() {
         this.setState({
@@ -149,11 +159,9 @@ class Datepicker extends React.Component {
         })
         this.init(this.state.year, this.state.month, this.state.date);
     }
-    dateSelect(date) {
-
+    dateSelect(date, event) {
         if (date) {
             this.setState({
-                //date: date,
                 showFlag: false,
                 dateString: [this.state.year, this.state.month, date].join('-')
             })

@@ -16,7 +16,11 @@ class AccordionTab extends React.Component {
             '大标题3': ['标题3-0', '标题3-1', '标题3-2'],
             '大标题4': ['标题4-0', '标题4-1', '标题4-2'],
         }
-        return <Accordion  accordionData={accordionData}></Accordion>
+        return <div>
+                    <a className="view-src" href="https://github.com/1451417401/React-cui/tree/master/src/accordion">view src---accordion</a>
+                    <Accordion  accordionData={accordionData}></Accordion>
+                </div>
+
     }
 }
 
