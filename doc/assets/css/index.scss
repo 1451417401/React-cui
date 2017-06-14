@@ -1,10 +1,72 @@
-* {
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td,
+section,
+article,
+aside,
+header,
+footer,
+nav,
+dialog,
+figure,
+hgroup {
     margin: 0;
-    padding: 0;
+    padding: 0
 }
 
+input,
+select,
+textarea {
+    font-size: 100%
+}
+
+ul,
+ol,
 li {
-    list-style: none;
+    list-style: none
+}
+
+input:focus,
+a:focus {
+    outline: 0
+}
+
+input:hover {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+* {
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {

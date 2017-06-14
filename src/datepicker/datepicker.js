@@ -32,8 +32,9 @@ class Datepicker extends React.Component {
         // }
         //console.dir(dataToShow);
         return <div className="d-container">
-                    <input type="text" className="p-input" onChange={this.handleChagne.bind(this)} onFocus={this.show.bind(this)} onBlur={this.hide.bind(this)} value={this.state.dateString} />
-                    <div className={classNames({'p-content':true,'hide':!this.state.showFlag})} onClick={this.filterClick.bind(this)}>
+                    {/*<input type="text" className="p-input" onChange={this.handleChagne.bind(this)} onFocus={this.show.bind(this)} onBlur={this.hide.bind(this)} value={this.state.dateString} />*/}
+                    <div className="p-input" onClick={this.toggleDate.bind(this)}>{this.state.dateString}</div>
+                    <div className={classNames({'p-content':true,'hide':!this.state.showFlag})}>
                         <div>
                             <span className="year-op" onClick={this.yearLeft.bind(this)}>&lt;&lt;</span>
                             <span className="month-op" onClick={this.monthLeft.bind(this)}>&lt;</span>
@@ -127,6 +128,14 @@ class Datepicker extends React.Component {
             })
         }, 100)
 
+    }
+    toggleDate() {
+        this.setState({
+            year: new Date().getFullYear(),
+            month: new Date().getMonth() + 1,
+            date: new Date().getDate(),
+            showFlag: !this.state.showFlag
+        });
     }
     filterClick(event) {
         // console.dir('filter');
