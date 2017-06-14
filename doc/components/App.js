@@ -17,7 +17,7 @@ class App extends React.Component {
         return <div className="app">
             {/*<div><Accordion  accordionData={accordionData}></Accordion></div>*/}
             <div className="nav-tab">
-                <div className="tab-head"><h2><Link to="/">react ui components</Link></h2></div>
+                <div className="tab-head"><Link to="/"><h2>react ui components<span className="view-wap">...</span></h2></Link></div>
                 <ul>
                   <li><Link to="/datepickerTab">datepicker</Link></li>
                     <li><Link to="/dialogTab">dialog</Link></li>
