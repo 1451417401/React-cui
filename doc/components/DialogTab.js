@@ -16,6 +16,8 @@ class DialogTab extends React.Component {
         }
     }
     render() {
+        console.dir('tab---------');
+        console.dir(this.state.showFlag);
 
         var liStyle = {
             listStyle: 'none'
@@ -47,6 +49,11 @@ class DialogTab extends React.Component {
         this.setState({
             showFlag: false,
             lists: this.state.lists
+        })
+    }
+    componentWillUnmount() {
+        this.setState({
+            showFlag: false
         })
     }
 }
