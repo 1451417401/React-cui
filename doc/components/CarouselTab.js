@@ -11,14 +11,14 @@ class CarouselTab extends React.Component {
     }
     render() {
         var images = [
-            'assets/images/c1.jpg',
-            'assets/images/c2.jpg',
-            'assets/images/c3.jpg',
-            'assets/images/c4.jpg',
-            'assets/images/c5.jpg',
+            'images/c1.jpg',
+            'images/c2.jpg',
+            'images/c3.jpg',
+            'images/c4.jpg',
+            'images/c5.jpg',
         ]
         return <div>
-                    <a className="view-src" href="https://github.com/1451417401/React-cui/tree/master/src/carousel">view src---datepicker</a>
+                    <a className="view-src" href="https://github.com/1451417401/React-cui/tree/master/src/carousel">view src---carousel</a>
                     <Carousel images={images}></Carousel>
                 </div>
 
