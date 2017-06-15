@@ -14,7 +14,7 @@ class Dialog extends React.Component {
         return <div className={classNames({'dialog-container':true,'show':this.state.showFlag})} onClick={this.hide.bind(this)}>
                 <div className="content" onClick={this.stopPop.bind(this)}>
                     <div>
-                        <p className="msg">this is message!</p>
+                        <p className="msg">确定?</p>
                     </div>
                     <div className="btn">
                         <a className="cancel" onClick={this.hide.bind(this)}>取消</a>
