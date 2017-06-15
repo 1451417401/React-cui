@@ -21,7 +21,6 @@ var data = [{
         level: 1,
         children: [
             { label: 'White Leghorn', level: 2 },
-            { lable: 'Rhode Island Red', level: 2 },
             { label: 'Jersey Giant', level: 2 }
         ]
     }]
@@ -53,7 +52,7 @@ var data = [{
         level: 1,
         children: [
             { label: 'Igneous', level: 2 },
-            { lable: 'Sedimentary', level: 2 },
+            { label: 'Sedimentary', level: 2 },
             { label: 'Metamorphic', level: 2 }
         ]
     }, {
@@ -61,7 +60,7 @@ var data = [{
         level: 1,
         children: [
             { label: 'Aluminum', level: 2 },
-            { lable: 'Steel', level: 2 },
+            { label: 'Steel', level: 2 },
             { label: 'Copper', level: 2 }
         ]
     }, {
@@ -72,19 +71,18 @@ var data = [{
             level: 2,
             children: [
                 { label: 'polyethylene', level: 3 },
-                { lable: 'polypropylene', level: 3 },
+                { label: 'polypropylene', level: 3 },
                 { label: 'polystyrene', level: 3 },
                 { label: 'polyvinyl chloride', level: 3 },
             ]
         }, {
-            label: 'Thermosetting Polymer',
+            label: 'Thermo Polymer',
             level: 2,
             children: [
                 { label: 'polyester', level: 3 },
-                { lable: 'polyurethane', level: 3 },
+                { label: 'polyurethane', level: 3 },
                 { label: 'vulcanized rubber', level: 3 },
                 { label: 'bakelite', level: 3 },
-                { label: 'urea-formaldehyde', level: 3 },
             ]
         }]
     }]

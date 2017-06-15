@@ -1,23 +1,74 @@
 .tree-container {
     width: 90%;
+    padding: 20px 0 0 20px;
     background: #f5f6f8;
     cursor: default;
+    .unit {
+        .children {
+            overflow: hidden;
+        }
+        p {
+            width: 160px;
+            padding: 1px 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            border: 1px solid #999;
+        }
+    }
+}
+
+.has-children {
+    &:before {
+        content: '-';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        line-height: 14px;
+        margin-right: 5px;
+        background: #999;
+        border-radius: 100%;
+        text-align: center;
+    }
+    &.close {
+        &:before {
+            content: '+';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            line-height: 14px;
+            margin-right: 5px;
+            background: #999;
+            border-radius: 100%;
+            text-align: center;
+        }
+    }
 }
 
 .tree-level0 {}
 
 .tree-level1 {
-    padding-left: 40px;
+    margin-left: 40px;
 }
 
 .tree-level2 {
-    padding-left: 80px;
+    margin-left: 80px;
 }
 
 .tree-level3 {
-    padding-left: 120px;
+    margin-left: 120px;
 }
 
 .tree-level4 {
-    padding-left: 160px;
+    margin-left: 160px;
+}
+
+.animat {
+    animation: slide 2s ease forwards;
+}
+
+@keyframes slide {
+    from {}
+    to {
+        height: 0px;
+    }
 }
