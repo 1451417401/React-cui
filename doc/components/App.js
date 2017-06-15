@@ -24,6 +24,7 @@ class App extends React.Component {
                     <li><Link to="/modalTab">modal</Link></li>
                     <li><Link to="/accordionTab">accordion</Link></li>
                     <li><Link to="/treeTab">tree</Link></li>
+                    <li><Link to="/carouselTab">carousel</Link></li>
                 </ul>
             </div>
             <div className="nav-content">

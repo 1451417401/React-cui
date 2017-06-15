@@ -12,6 +12,7 @@ class Carousel extends React.Component {
     }
     render() {
         var { images } = this.props;
+        images = images.concat(images)
         return <div id="c-view">
                 <ul id="c-content">
                     {
@@ -23,34 +24,44 @@ class Carousel extends React.Component {
             </div>
     }
     componentDidMount() {
+        var { images } = this.props;
         var index = 1;
-        var number = 5;
+        var number = images.length + 1;
         var width = 480;
 
-        var inter = setInterval(toLeft, 2000);
+        var inter = setInterval(
+            function() {
+                if (index <= number) {
+                    toLeft();
+                }
+            }, 2000);
 
         function toLeft() {
-            if (index < number) {
-                var leftValue = ['-', index * width, 'px'].join('');
-                //$('.c-content').addClass('ani');
-                // $('.c-content').css({
-                //     "left": leftValue
-                // });
-                document.getElementById('c-content').className = 'ani';
-                document.getElementById('c-content').style.left = leftValue;
+            var leftValue = ['-', index * width, 'px'].join('');
+            //$('.c-content').addClass('ani');
+            // $('.c-content').css({
+            //     "left": leftValue
+            // });
+            document.getElementById('c-content').className = 'ani';
+            document.getElementById('c-content').style.left = leftValue;
 
-                index++
-            } else {
-                clearInterval(inter);
-                index = 1;
-                // $('.c-content').removeClass('ani');
-                // $('.c-content').css({
-                //     "left": "0px"
-                // })
-                document.getElementById('c-content').className = '';
-                document.getElementById('c-content').style.left = '0px';
-                inter = setInterval(toLeft, 2000);
+            index++
+            console.dir(index);
+            if (index > number) {
+                reset();
             }
+        }
+
+        function reset() {
+            clearInterval(inter);
+            index = 1;
+            // $('.c-content').removeClass('ani');
+            // $('.c-content').css({
+            //     "left": "0px"
+            // })
+            document.getElementById('c-content').className = '';
+            document.getElementById('c-content').style.left = '0px';
+            inter = setInterval(toLeft, 2000);
         }
 
     }

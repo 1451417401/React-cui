@@ -15,7 +15,7 @@ render((
       <Route path="modalTab" component={ModalTab}/>
       <Route path="accordionTab" component={AccordionTab}/>
       <Route path="treeTab" component={TreeTab}/>
-      {/*<Route path="carouselTab" component={CarouselTab}/>*/}
+      <Route path="carouselTab" component={CarouselTab}/>
       <Route path="*" component={Home}/>
     </Route>
   </Router>

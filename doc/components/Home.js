@@ -18,6 +18,7 @@ class Home extends React.Component {
                     <li><Link to="/modalTab">Go modal</Link></li>
                     <li><Link to="/accordionTab">Go accordion</Link></li>
                     <li><Link to="/treeTab">Go tree</Link></li>
+                     <li><Link to="/carouselTab">Go carousel</Link></li>
                 </ul>
                </div>
     }

@@ -7,9 +7,10 @@
      list-style: none;
  }
  
+ $carousleItemWidth: 480px;
  #c-view {
      position: relative;
-     width: 480px;
+     width: $carousleItemWidth;
      height: 270px;
      overflow: hidden;
      margin: 50px auto;
@@ -29,7 +30,7 @@
  }
  
  #c-content li {
-     width: 480px;
+     width: $carousleItemWidth;
      height: 270px;
      float: left;
  }
