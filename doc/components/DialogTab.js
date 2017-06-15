@@ -15,9 +15,17 @@ class DialogTab extends React.Component {
             ]
         }
     }
+    componentWillReceiveProps() {
+        //console.dir('tab---------will');
+        //console.dir(this.state.showFlag);
+        if (this.state.showFlag) {
+            this.setState({
+                showFlag: false
+            })
+        }
+    }
     render() {
-        console.dir('tab---------');
-        console.dir(this.state.showFlag);
+
 
         var liStyle = {
             listStyle: 'none'
@@ -51,11 +59,7 @@ class DialogTab extends React.Component {
             lists: this.state.lists
         })
     }
-    componentWillUnmount() {
-        this.setState({
-            showFlag: false
-        })
-    }
+
 }
 
 export default DialogTab;
