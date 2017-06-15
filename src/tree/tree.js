@@ -36,7 +36,10 @@ class Tree extends React.Component {
             if (/close/g.test(target.className)) {
                 target.className = target.className.replace(/close/g, '');
             } else {
-                target.className += " close";
+                setTimeout(function() {
+                    target.className += " close";
+                }, 500)
+
             }
         }
 

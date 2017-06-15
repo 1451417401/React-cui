@@ -17,7 +17,7 @@ class Carousel extends React.Component {
                 <ul id="c-content">
                     {
                         images.map((value,index)=>{
-                            return <li key={index}><img src={value} alt={index}></img></li>
+                            return <li key={index}><img draggable="false" src={value} alt={index}></img></li>
                         })
                     }
                 </ul>

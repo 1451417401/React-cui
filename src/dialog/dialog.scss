@@ -29,7 +29,7 @@
         background: #fff;
         border-radius: 5px;
         transition: left 1s, top 1s, width 1s, height 1s;
-        transition-timing-function: cubic-bezier(.64, .08, .49, 1.2);
+        transition-timing-function: cubic-bezier(1, -0.02, .03, 1.32);
     }
     .msg {
         text-align: center;
@@ -50,15 +50,16 @@
             border-radius: 5px;
             cursor: pointer;
             &.sure {
-                background: #caa86c;
+                background: #81c784;
                 &:hover {
-                    background: #f5ecdd;
+                    background: #66bb6a;
                 }
             }
             &.cancel {
-                background: #b2b2b2;
+                background: #e57373;
                 &:hover {
-                    background: #e7e7e7;
+                    background: #ef5350;
+                    ;
                 }
             }
         }
