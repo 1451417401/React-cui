@@ -35,7 +35,7 @@ class DialogApp extends React.Component {
                     }
                 </ul>
                 <button onClick={this.openDialog.bind(this)} style={btnStyle}>删除</button>
-                <Dialog showFlag={this.state.showFlag} successCallback={this.delSuccess.bind(this)}></Dialog>
+                <Dialog showFlag={this.state.showFlag} cancelCallback={this.cancel.bind(this)} successCallback={this.delSuccess.bind(this)}></Dialog>
         </div>
     }
     openDialog() {
@@ -48,6 +48,11 @@ class DialogApp extends React.Component {
         this.setState({
             showFlag: false,
             lists: this.state.lists
+        })
+    }
+    cancel() {
+        this.setState({
+            showFlag: false
         })
     }
 }

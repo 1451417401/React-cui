@@ -5,19 +5,18 @@ import './dialog.scss';
 class Dialog extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            showFlag: false
-        }
+        this.state = {}
     }
     render() {
+
         console.dir('-----render')
-        return <div className={classNames({'dialog-container':true,'show':this.state.showFlag})} onClick={this.hide.bind(this)}>
+        return <div className={classNames({'dialog-container':true,'show':this.props.showFlag})} onClick={this.cancel.bind(this)}>
                 <div className="content" onClick={this.stopPop.bind(this)}>
                     <div>
                         <p className="msg">确定?</p>
                     </div>
                     <div className="btn">
-                        <a className="cancel" onClick={this.hide.bind(this)}>取消</a>
+                        <a className="cancel" onClick={this.cancel.bind(this)}>取消</a>
                         <a className="sure" onClick={this.sure.bind(this)}>确定</a>
                     </div>
                 </div>
@@ -29,13 +28,6 @@ class Dialog extends React.Component {
     }
     componentWillReceiveProps(nextProps) {
         console.dir('-----will')
-        console.dir(nextProps.showFlag);
-        console.dir(this.props.showFlag);
-        //if (!this.props.showFlag) {
-        this.setState({ showFlag: nextProps.showFlag });
-        //}
-        console.dir(this.props.showFlag);
-
     }
     shouldComponentUpdate(nextProps, nextState) {
         console.dir('------should');
@@ -49,22 +41,12 @@ class Dialog extends React.Component {
         if (successCallback) {
             successCallback();
         }
-        //this.hide();
-        console.dir('======sure');
-        console.dir(this.props.showFlag);
     }
-    show() {
-        this.setState({
-            showFlag: true
-        })
-    }
-    hide() {
-        this.setState({
-            showFlag: false
-        })
-
-        console.dir('======hide');
-        console.dir(this.props.showFlag);
+    cancel() {
+        var { cancelCallback } = this.props;
+        if (cancelCallback) {
+            cancelCallback();
+        }
     }
     stopPop(e) {
         e.stopPropagation();

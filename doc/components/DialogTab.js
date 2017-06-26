@@ -44,7 +44,7 @@ class DialogTab extends React.Component {
                     }
                 </ul>
                 <a className="del" onClick={this.openDialog.bind(this)} style={btnStyle}>delete</a>
-                <Dialog showFlag={this.state.showFlag} successCallback={this.delSuccess.bind(this)}></Dialog>
+                <Dialog showFlag={this.state.showFlag} cancelCallback={this.cancel.bind(this)} successCallback={this.delSuccess.bind(this)}></Dialog>
         </div>
     }
     openDialog() {
@@ -57,6 +57,11 @@ class DialogTab extends React.Component {
         this.setState({
             showFlag: false,
             lists: this.state.lists
+        })
+    }
+    cancel() {
+        this.setState({
+            showFlag: false
         })
     }
 
