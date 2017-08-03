@@ -41,6 +41,11 @@ class Modal extends React.Component {
                 })
             }, 2000)
         }
+        //调用页重复触发弹窗时，还是应该通过回调函数去控制调用者处的state
+        //单向数据流往往会出现这种问题，因为数据的控制是单向的
+        // let {modalCallback}=this.props;
+        // setTimeout(modalCallback, 2000)
+        }
 
     }
 }
