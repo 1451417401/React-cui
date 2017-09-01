@@ -4,7 +4,8 @@
   "description": "chenyajun react ui",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "author": "",
   "license": "ISC",
@@ -14,9 +15,21 @@
     "babel-preset-env": "^1.5.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "coveralls": "^2.13.1",
     "css-loader": "^0.28.2",
     "extract-text-webpack-plugin": "^2.1.0",
+    "istanbul-instrumenter-loader": "^3.0.0",
+    "jasmine": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage-istanbul-reporter": "^1.3.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "0.0.31",
+    "karma-webpack": "^2.0.4",
     "node-sass": "^4.5.3",
+    "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.0",
     "webpack": "^2.6.0"
