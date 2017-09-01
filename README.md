@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/1451417401/React-cui.svg?branch=master)](https://travis-ci.org/1451417401/React-cui) [![Coverage Status](https://coveralls.io/repos/github/1451417401/React-cui/badge.svg?branch=master)](https://coveralls.io/github/1451417401/React-cui?branch=master)
+
 react common ui compoents
 =========================
 
