@@ -88,6 +88,7 @@ module.exports = function(config) {
         resolve: {
                 extensions: ['.js', '.jsx', '.scss', '.css']
         },
+
         module: {
             rules: [
                 {
@@ -124,6 +125,12 @@ module.exports = function(config) {
                   // },
             ]
         },
+        externals: {
+            'react/addons': 'react',
+            'react/lib/ExecutionEnvironment': 'react',
+            'react/lib/ReactContext': 'react',
+            'react-addons-test-utils': 'react-dom',
+        },
         plugins: [
         new webpack.DefinePlugin({
           'process.env': {
@@ -136,6 +143,7 @@ module.exports = function(config) {
     webpackMiddleware: {
       noInfo: true,
       stats: 'errors-only'
-    }
+    },
+
   })
 }
