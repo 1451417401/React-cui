@@ -36,12 +36,12 @@ class Datepicker extends React.Component {
                     <div className="p-input" onClick={this.toggleDate.bind(this)}>{this.state.dateString}</div>
                     <div className={classNames({'p-content':true,'hide':!this.state.showFlag})}>
                         <div>
-                            <span className="year-op" onClick={this.yearLeft.bind(this)}>&lt;&lt;</span>
-                            <span className="month-op" onClick={this.monthLeft.bind(this)}>&lt;</span>
+                            <span className="date-op year-op" onClick={this.yearLeft.bind(this)}>&lt;&lt;</span>
+                            <span className="date-op month-op" onClick={this.monthLeft.bind(this)}>&lt;</span>
                             <span>{this.state.year}</span>年
                             <span>{this.state.month}</span>月
-                            <span className="month-op" onClick={this.monthRight.bind(this)}>&gt;</span>
-                            <span className="year-op" onClick={this.yearRight.bind(this)}>&gt;&gt;</span>
+                            <span className="date-op month-op" onClick={this.monthRight.bind(this)}>&gt;</span>
+                            <span className="date-op year-op" onClick={this.yearRight.bind(this)}>&gt;&gt;</span>
                         </div>
                         <div>
                             <table className="c-weeek">
@@ -74,6 +74,25 @@ class Datepicker extends React.Component {
                     </div> 
                 </div>
 
+    }
+    componentDidMount(){
+        document.body.addEventListener('click',e=>{
+            if (e.target && (e.target.matches('div.p-input') || e.target.matches('div.p-content') || e.target.matches('span.date-op'))) {
+              return;
+            }
+            this.hide();
+        });
+        document.querySelector('.p-content').addEventListener('click',e=>{
+            if (e.target && (e.target.matches('td.item-day') || e.target.matches('span.date-op'))) {
+              return;
+            }
+            e.stopPropagation();
+        });
+    }
+    componentWillUnmount(){
+        document.body.removeEventListener('click');
+        document.querySelector('.p-content').removeEventListener('click');
+        clearTimeout(this.timer);
     }
     init() {
         var dataToShow = [];
